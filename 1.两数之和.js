@@ -11,7 +11,15 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    
+    const obj = {}
+    let i = 0
+    while(i < nums.length) {
+      if(typeof obj[target - nums[i]] === 'number') {
+        return [obj[target - nums[i]], i]
+      }
+      obj[nums[i]] = i
+      i++
+    }
 };
 // @lc code=end
 
